@@ -2,7 +2,7 @@ from unittest.mock import Mock, patch
 
 
 class Restaurant:
-    def get_food():
+    def get_food(self):
         return "pizza"
 
 
