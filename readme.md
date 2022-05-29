@@ -2,6 +2,8 @@
 
 A really simple demo of how to use pytest.
 
+## Run
+
 Run unit test:
 ```sh
 pytest
@@ -11,6 +13,8 @@ List markers:
 ```sh
 pytest --markers
 ```
+
+## Markers
 
 Markers are defined in `pytest.ini`.
 
@@ -33,6 +37,8 @@ pytest -m "not ignore"
 # run ignore tests only
 pytest -m "ignore"
 ```
+
+## Reports
 
 Generate html report with `pytest-html`:
 
