@@ -40,3 +40,12 @@ Generate html report with `pytest-html`:
 pytest --html=reports/report.html
 open reports/report.html
 ```
+
+Generate coverage report:
+```sh
+pytest --cov-report html:cov_report --cov=src .
+open cov_report/index.html
+
+# branch coverage
+pytest --cov-report html:cov_report --cov-branch --cov=src .
+```
