@@ -5,8 +5,8 @@ class MyDatabase:
     def __init__(self):
         pass
 
-    def query(self):
-        return "hello"
+    def query(self, sql):
+        pass
 
 
 class MyServcie:
@@ -14,23 +14,21 @@ class MyServcie:
         self.db = db
 
     def get_data(self):
-        return self.db.query()
+        return self.db.query("select * from user_table")
 
 
-def test_service_get_data():
+def test_service_get_data_with_stub():
     """
     It should query from database.
     """
     # arrange
-    spy_db = Mock(MyDatabase)
-    spy_db.query.return_value = "world"
+    stub_db = Mock(MyDatabase)
+    stub_db.query = Mock()
+    stub_db.query.return_value = "world"
 
     # act
-    service = MyServcie(spy_db)
+    service = MyServcie(stub_db)
     reuslt = service.get_data()
 
     # assert
-    spy_db.query.assert_called()
     assert reuslt == "world"
-    # or
-    # assert spy_db.query.called
